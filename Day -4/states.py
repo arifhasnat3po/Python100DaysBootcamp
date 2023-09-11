@@ -51,6 +51,6 @@ states_in_order = [
     "Hawaii"
 ]
 
-states_in_order.append("Mexico")
-states_in_order.extend(["Angel","Bal"])
+# states_in_order.append("Mexico")
+# states_in_order.extend(["Angel","Bal"])
 print(states_in_order)
