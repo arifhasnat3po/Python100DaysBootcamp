@@ -26,25 +26,28 @@ scissors = '''
       (____)
 ---.__(___)
 '''
+game_images = [rock, paper, scissors]
 user_input = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
 if user_input >= 3 or user_input < 0:
  print("Please enter a valid number")
-if user_input == 0:
-    print(rock)
-elif user_input == 1:
-    print(paper)
-elif user_input == 2:
-    print(scissors)
+# if user_input == 0:
+#     print(rock)
+# elif user_input == 1:
+#     print(paper)
+# elif user_input == 2:
+#     print(scissors)
+print(game_images[user_input])
 #Write your code below this line 👇
 #for computer
 random_value = random.randint(0,2)
 print("Computer chose:\n")
-if random_value == 0:
-  print(rock)
-elif random_value == 1:
-  print(paper)
-elif random_value == 2:
-  print(scissors)
+# if random_value == 0:
+#   print(rock)
+# elif random_value == 1:
+#   print(paper)
+# elif random_value == 2:
+#   print(scissors)
+print(game_images[random_value])
 
 #comparing the string
 if user_input == random_value :
