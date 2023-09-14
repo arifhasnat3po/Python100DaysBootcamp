@@ -45,3 +45,9 @@ print(f"Password for you : {password}")
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+# final_pass = str(l_password) + str(s_password) + str(n_password)
+l = list(password)
+random.shuffle(l)
+final_pass = ''.join(l)
+
+print(f"RANDOM and more secure password for you : {final_pass}")
