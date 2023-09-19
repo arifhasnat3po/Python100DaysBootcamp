@@ -4,44 +4,19 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-def encrypt(plain_text, shift_amount):
-  cipher_text = ""
-  for letter in plain_text:
+#TODO-1: Combine the encrypt() and decrypt() functions into a single function called caesar().
+def caesar(cipher_direction, start_text, shift_amount):
+  end_text = ""
+  for letter in start_text:
     position = alphabet.index(letter)
-    new_position = (position + shift_amount)%26
-    cipher_text += alphabet[new_position]
-  print(f"The encoded text is {cipher_text}")
+    if cipher_direction=="encode":
+      new_position = (position + shift_amount)%26
+      end_text += alphabet[new_position]
+      # print(f"The encoded text is {end_text}")
+    elif cipher_direction == "decode":
+      new_position = (position - shift_amount)%26
+      end_text += alphabet[new_position]
 
-#TODO-1: Create a different function called 'decrypt' that takes the 'text' and 'shift' as inputs.
-def decrypt(encrpted_text, shift_amount):
-  plain_text = ""
-  for letter in encrpted_text:
-    position = alphabet.index(letter)
-    new_position = (position - shift_amount)%26
-    plain_text += alphabet[new_position]
-
-  print(f"The decoded text is {plain_text}")
-
+  print(f"The {cipher_direction}d text is {end_text}")
   
-  
-  #TODO-2: Inside the 'decrypt' function, shift each letter of the 'text' *backwards* in the alphabet by the shift amount and print the decrypted text.  
-  #e.g. 
-  #cipher_text = "mjqqt"
-  #shift = 5
-  #plain_text = "hello"
-  #print output: "The decoded text is hello"
-
-
-#TODO-3: Check if the user wanted to encrypt or decrypt the message by checking the 'direction' variable. Then call the correct function based on that 'drection' variable. You should be able to test the code to encrypt *AND* decrypt a message.
-# user = input("Do you want to quit the program? If yes type 'y' if no type 'n'").lower()
-# if user == 'n':
-if direction == "encode":
-    encrypt(plain_text=text, shift_amount=shift)
-    # user = input("Do you want to quit the program? If yes type 'y' if no type 'n'").lower()
-    # if user == 'n':
-  # print("Do you want to quit the program? If yes type 'y' if no type 'n'")
-elif direction == "decode":
-      decrypt(encrpted_text= text, shift_amount=shift)
-
-# elif user =='y':
-#   exit(1)
+caesar(cipher_direction=direction, start_text=text, shift_amount=shift)
