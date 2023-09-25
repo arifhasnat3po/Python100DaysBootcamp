@@ -26,8 +26,9 @@ operations = {
     "/": div,
 }
 def calculator():
+  print(logo)
 # operations["*"]
-  num1 = int(input("What's the first number?: "))
+  num1 = float(input("What's the first number?: "))
   # num2 = int(input("What's the second number?: "))
   
   for i in operations:
@@ -35,7 +36,7 @@ def calculator():
   
   
   operation_symbol = input("Pick an operation: ")
-  num2 = int(input("What's the next number?: "))
+  num2 = float(input("What's the next number?: "))
   
   calculation = operations[operation_symbol]
   answer = calculation(num1,num2)
@@ -50,7 +51,7 @@ def calculator():
     
   
     operation_symbol = input("Pick another operation: ")
-    num3 = int(input("What's the next number?: "))
+    num3 = float(input("What's the next number?: "))
     calculation = operations[operation_symbol]
     second_answer = calculation(calculation(num1, num2), num3)
     print(f"{num1} {operation_symbol} {num2} = {second_answer}")
