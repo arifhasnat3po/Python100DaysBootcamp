@@ -6,6 +6,7 @@ from replit import clear
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def deal_cards():
+      
   return random.choice(cards)
 
 
@@ -69,10 +70,12 @@ def play_game():
     user_score = calculate_score(user_cards)
     computer_score  = calculate_score(computer_cards)
     print(f" Your cards: {user_cards}, Current Score: {user_score} ")
-    print(f" Computer cards: {computer_cards}, Current Score: {computer_score} ")
+    # print(f" Computer cards: {computer_cards}, Current Score: {computer_score} ")
+    print(f" Computer's first card: {computer_cards[0]} ")
     
     
-    print(compare(user_score,computer_score))
+    
+    # print(compare(user_score,computer_score))
     if user_score > 21  or computer_score == 0 or user_score == 0 :
       is_game_over = True
 
