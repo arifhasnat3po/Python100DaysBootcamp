@@ -1,16 +1,19 @@
 from turtle import Turtle, Screen
 
-timmy_the_turtle = Turtle()
-timmy_the_turtle.shape("turtle")
-timmy_the_turtle.color("green")
-timmy_the_turtle.forward(100)
-timmy_the_turtle.right(90)
+tim = Turtle()
+tim.shape("turtle")
+tim.color("sea green")
+for _ in range(15):
+    tim.forward(10)
+    tim.penup()
+    # tim.color("white")
+    tim.forward(10)
+    tim.pendown()
+    # tim.color("black")
 
-
-
-
-
-
+# import heroes
+# print(heroes.gen())
+tim
 
 
 
