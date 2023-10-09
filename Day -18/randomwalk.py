@@ -8,10 +8,10 @@ tim.shape("turtle")
 # colors = ["red", "green", "blue", "yellow", "orange", "purple", "pink", "brown", "gray", "black", "white", "cyan", "magenta", "teal", "lavender", "maroon", "olive", "navy", "aquamarine", "turquoise", "silver", "lime", "gold", "violet", "indigo"]
 colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
 
-move = [0,90,180,270]
+move = [0,90,180,270,360]
 tim.speed('slow')
 # tim.color(random.choice(colours))
-tim.pensize(10)
+tim.pensize(15)
 for i in range(200):
     # steps = int(random.random() * 100)
     # angle = int(random.random() * 360)
