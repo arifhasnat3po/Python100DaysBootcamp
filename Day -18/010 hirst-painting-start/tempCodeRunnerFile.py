@@ -1,0 +1,5 @@
+    timmy.setheading(90)
+        timmy.forward(50)
+        timmy.setheading(180)
+        timmy.forward(500)
+        timmy.setheading(0)
