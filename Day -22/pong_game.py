@@ -53,8 +53,15 @@ while game_is_on:
     if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() > -320:
         ball.bounce_x()
         
-        
+    # Detect if the ball goes out of bounds on the right side
+    if ball.xcor() > 400:
+        ball.goto(0, 0)  # Reset ball position to the center
+        ball.bounce_x()  # Optional: Adjust the initial direction after resetting
 
+    # Detect if the ball goes out of bounds on the left side
+    if ball.xcor() < -400:
+        ball.goto(0, 0)  # Reset ball position to the center
+        ball.bounce_x()  # Optional: Adjust the initial direction after resetting
 
 
 screen.exitonclick()
