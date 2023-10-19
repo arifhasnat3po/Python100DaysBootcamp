@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 import time
 
 
@@ -16,6 +17,7 @@ l_paddle = Paddle((-350, 0))
 r_paddle = Paddle((350, 0))
 
 ball = Ball()
+scoreboard = Scoreboard()
 
 
 screen.listen()
@@ -54,14 +56,14 @@ while game_is_on:
         ball.bounce_x()
         
     # Detect if the ball goes out of bounds on the right side
-    if ball.xcor() > 400:
-        ball.goto(0, 0)  # Reset ball position to the center
-        ball.bounce_x()  # Optional: Adjust the initial direction after resetting
+    if ball.xcor() > 380:
+        ball.reset_position()
+        scoreboard.l_point()
 
     # Detect if the ball goes out of bounds on the left side
-    if ball.xcor() < -400:
-        ball.goto(0, 0)  # Reset ball position to the center
-        ball.bounce_x()  # Optional: Adjust the initial direction after resetting
+    if ball.xcor() < -380:
+        ball.reset_position()
+        scoreboard.r_point()
 
 
 screen.exitonclick()
