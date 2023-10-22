@@ -1,16 +1,17 @@
 #TODO: Create a letter using starting_letter.txt
+PLACEHOLDER = "[name]"
 with open("./Input/Names/invited_names.txt") as names_file:
 
-    names = names_file.read().splitlines()
-    print(names)
+    names = names_file.readlines()
+    
 with open("./Input/Letters/starting_letter.txt") as letter:
     f_letter = letter.read()
-    print(f_letter)
-personalized_messages = [f_letter.replace('[name]', name) for name in names]
+    for name in names:
+        stripped_name = name.strip()
+        new_f_letter = f_letter.replace(PLACEHOLDER, name)
 
-with open("./Output/ReadyToSend/example.txt", "w") as output_file:
-    for message in personalized_messages:
-        output_file.write(message + '\n')
+        with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.txt", "w") as output_file:
+          output_file.write(new_f_letter)
         
 
 
