@@ -1,14 +1,14 @@
 #TODO: Create a letter using starting_letter.txt
-with open("C:\\Users\\ahpar\\Documents\\100daysofPython\\Day -24\\006 Mail-Merge-Project-Start\\Mail Merge Project Start\\Input\\Names\\invited_names.txt", "r") as names_file:
+with open("./Input/Names/invited_names.txt") as names_file:
 
     names = names_file.read().splitlines()
     print(names)
-with open("C:\\Users\\ahpar\\Documents\\100daysofPython\\Day -24\\006 Mail-Merge-Project-Start\\Mail Merge Project Start\\Input\\Letters\\starting_letter.txt", "r") as letter:
+with open("./Input/Letters/starting_letter.txt") as letter:
     f_letter = letter.read()
     print(f_letter)
 personalized_messages = [f_letter.replace('[name]', name) for name in names]
 
-with open(r"C:\Users\ahpar\Documents\100daysofPython\Day -24\006 Mail-Merge-Project-Start\Mail Merge Project Start\Output\ReadyToSend\example.txt", "w") as output_file:
+with open("./Output/ReadyToSend/example.txt", "w") as output_file:
     for message in personalized_messages:
         output_file.write(message + '\n')
         
