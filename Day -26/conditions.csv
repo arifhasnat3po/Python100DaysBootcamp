@@ -1,0 +1,14 @@
+﻿Enabled,Name,Condition,Actions
+Yes,RFID Active,Reader Card ID 500 to 700,Set Reader Status to Valid
+Yes,RFID Disable,Reader Card ID < 500 or Reader Card ID > 700,Set Reader Status to Waiting
+Yes,Door Open,Reader Status is Valid,Set Main door Lock to Unlock
+Yes,Door Close,Reader Status is Invalid or Reader Status is Waiting,Set Main door Lock to Lock
+Yes,Fire and Siren,IoT2 Fire Detected is true,Set Siren On to true
+Yes,Trip Sensor,Trip Sensor On is true,Set Siren On to true
+Yes,Set Siren On,Smoke Warner Alarm is true,Set Siren On to true
+Yes,Window Open,Street Lamp Light >= 10 and Rain MCU Rain Possibility < 0.0,Set Smart Window On to true
+Yes,Window Close,Street Lamp Light <- 9 or Rain MCU Rain Possibility > 0.0,Set Smart Window On to false
+Yes,Garage Open Smoke,Smoke Warner Level > 1,Set Smart Garage On to true
+Yes,Garage Close Smoke,Smoke Warner Level <- 1,Set Smart Garage On to false
+Yes,Coffee On,Motion For Fan On is true,Set Coffee Maker On to true
+Yes,Motion Fan ,Motion For Fan On is true ,Set Smart Fan Status to High
