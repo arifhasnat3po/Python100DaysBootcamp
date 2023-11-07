@@ -16,7 +16,7 @@ window.config(padx=20, pady=20)
 
 
 # Label
-my_label = Label(text="You are a Human", font=("Arial", 24, "bold"))
+my_label = Label(text="You are a Human", font=("Candara", 24, "bold"))
 
 # my_label.pack()
 # my_label.place(x=100, y=200)
