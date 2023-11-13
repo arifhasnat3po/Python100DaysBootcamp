@@ -16,10 +16,10 @@ else:
     content = file.read()
     print(content)
 finally:
-    # file.close()
-    # print("File was close")
+    file.close()
+    print("File was close")
     # raise KeyError
-    raise TypeError
+    # raise TypeError
 
 # Key Error
 # a_dictionary = {"key": "value"}
