@@ -30,8 +30,8 @@ if today_tuple in birthdays_dict:
 
     print(letter_content)
 
-my_mail = ""
-password = ""
+my_mail = "anikansky0@gmail.com"
+password = "xxcj wjyx gqks zubt"
 Subject = "Subject:Happy Birthday\n\n"
 body = letter_content
 connection = smtplib.SMTP("smtp.gmail.com")
