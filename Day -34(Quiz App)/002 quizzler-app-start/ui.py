@@ -22,7 +22,7 @@ class QuizInterface:
         self.question_text = self.canvas.create_text(
             150, 125,
             width=280,
-            text="Some Question Text", fill=THEME_COLOR, font=("Arial", 20, "italic"))
+            text="Some Question Text", fill=THEME_COLOR, font=("Arial", 10, "italic"))
         # self.canvas.question_text.grid(row=1, column=0, columnspan=2, pady=50)
         false_image = PhotoImage(file="images/false.png")
         self.false_button = Button(
@@ -41,13 +41,26 @@ class QuizInterface:
         self.window.mainloop()
 
     def get_next_question(self):
+        self.canvas.config(bg="white")
+        self.score_label.config(text=f"Score: {self.quiz.score}")
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
 
     def true_pressed(self):
-        if not self.quiz.check_answer("True"):
-            self.canvas.delete(self.question_text)
+        # is_right =  self.quiz.check_answer("True")
+        self.give_feedback(self.quiz.check_answer("True"))
+        # self.canvas.delete(self.question_text)
 
     def false_pressed(self):
-        if not self.quiz.check_answer("False"):
-            self.canvas.delete(self.question_text)
+        is_right = self.quiz.check_answer("False")
+        self.give_feedback(is_right)
+        # self.canvas.delete(self.question_text)
+
+    def give_feedback(self, is_right):
+        # self.window.after(1000, func=)
+        if is_right == True:
+            self.canvas.config(bg="green")
+
+        else:
+            self.canvas.config(bg="red")
+        self.window.after(1000, self.get_next_question)
