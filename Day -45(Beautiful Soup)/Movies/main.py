@@ -20,6 +20,7 @@ for title in top_titles:
 movies_list.reverse()
 
 # Open the file in write mode and write each title to a new line
+
 with open(movies_file_path, "w", encoding="utf-8") as file:
     for movie_title in movies_list:
         file.write(f"{movie_title}\n")
