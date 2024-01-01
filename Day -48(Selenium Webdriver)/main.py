@@ -32,15 +32,18 @@ driver.get("http://www.python.org/")
 
 # search_box.submit()
 
-logo = driver.find_element(CLASS_NAME, "python-logo")
+# logo = driver.find_element(CLASS_NAME, "python-logo")
 
-print(logo.size)
+# print(logo.size)
 
+# documentation = driver.find_element(CSS_SELECTOR, ".documentation-widget a")
+# print(documentation.text)
+event_times = driver.find_element(CSS_SELECTOR, ".event-widget last")
+# print(search_box.find_element(TAG_NAME, "a"))
+for time in event_times:
 
-# Find an element by name using find_element_by_name
-# search_bar = driver.find_element_by_name("q")
-# print(search_bar)
-# print(search_bar.get_attribute("placeholder"))
+    print(event_times.text)
+
 
 time.sleep(50000)
 driver.quit()
