@@ -1,0 +1,83 @@
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+section {
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #555;
+}
+
+h4 {
+  color: #777;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#profile p,
+#experience p,
+#education p,
+#contact p,
+#skills ul,
+#projects p {
+  margin-bottom: 10px;
+}
+
+#projects h3,
+#certificates h3,
+#publications h3,
+#languages h3,
+#interests h3,
+#references h3 {
+  color: #007bff;
+  margin-top: 20px;
+}
+
+/* Add styles for other sections as needed */
+
+@media (max-width: 600px) {
+  section {
+    margin: 10px;
+  }
+}
+
+.small-image {
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  border-radius: 50%; /* Create a circular shape */
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the left position as needed */
+}
