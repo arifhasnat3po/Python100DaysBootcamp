@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Blog</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <h2>{{5*6}}</h2>
-    <h3>Random Number: {{ num }}</h3>
-    <a href="{{ url_for('get_blog', num=3) }}" target="_blank"
-      >Go to the Blog</a
-    >
+    {% for blog_post in posts: %} {%if blog_post['id'] == 2 :%}
+    <h1>{{blog_post['title']}}</h1>
+    <h2>{{blog_post['subtitle']}}</h2>
+    {%endif%} {%endfor%}
   </body>
   <footer>
     <p>copyright: {{ year }}</p>
